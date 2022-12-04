@@ -2,16 +2,47 @@
     margin: 0;
     padding: 0;
 }
+:root{
+    --fundo:#fff;
+    --cor-primari:#000;
+    --cor-secundaria:#c6c6c6;
+    --corfundo-menu:#fff;
+    --colo-menu:#000;
+    --cor-nth:#f1eded;
+    --cordiferente:#f7f7f7;
+    --bkg:#fff;
+    --onda:url(imagens/onda.svg);
+}
+@media (prefers-color-scheme: dark){
+
+    :root{
+        --fundo:#222;
+        --cor-primari:#eee;
+        --cor-secundaria:#fff;
+        --corfundo-menu:#544E4C;
+        --colo-menu:#fff;
+        --cor-nth:#111;
+        --cordiferente:#3b292965;
+        --bkg:#000;
+        --onda:url(imagens/onda-escura.svg);
+    }
+}
+svg{
+    margin: auto;
+     display: block;
+}   
+
 img{
     max-width: 100%;
     display: block;
 }   
 body{
-    background-color: #f7f7f7;
+    background-color: var(--fundo);
     font-family: Arial, Helvetica, sans-serif;
+    color: var(--cor-primari);
     
 }
-img.central {
+.central {
     margin: 40px auto;
     
 }
@@ -37,8 +68,8 @@ nav{
 nav a {
     display: block;
     padding: .8rem 1.5rem;
-    background-color: #fff;
-    color: #000;
+    background-color: var(--corfundo-menu);
+    color: var(--colo-menu);
     border: 2px solid rgba(230, 227, 227, 0.507);
     border-radius: 4px;
     
@@ -51,13 +82,12 @@ nav a:hover{
 main{
     max-width: 1000px;
     margin: 40px auto;
-    background-color: #fff;
+    background-color: var(--fundo);
 }
 article  {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-    gap: 10px;
-    
+  
 }
 article a {
     background-color: #ff0000;
@@ -87,16 +117,14 @@ h1{
     font-size: 2rem;
 }
 
-h1::before{
+h1::before {
     content: "";
     height: 4px;
     width: 60px;
-    background-color: #ff0000;
+    background-color: red;
     position: absolute;
     top: -30px;
-    right: -79px;
-    
-
+    right: -70px;
 }
 
 
@@ -107,7 +135,7 @@ p{
 }
 
 #diferente{
-    background-color: #f7f7f7;
+    background-color:var(--fundo);
    
     text-align: right;
     display: grid;
@@ -116,10 +144,10 @@ p{
 }
 h2{
     font-size: 4rem;
-    color: #c6c6c6;
+    color: var(--cor-secundaria);
     text-transform: uppercase;
     align-self: center;
-    background-image: url(imagens/onda.svg);
+    background-image: var(--onda);
     padding: 40px;
 }
 
@@ -152,6 +180,9 @@ ul, li{
     padding: 20px;
     margin: 8px;
 }
+.bkg{
+    background-color: var(--bkg);
+}
 
 
 li.borda {
@@ -165,11 +196,11 @@ li.borda:hover {
 
 
 .cor li:nth-child(odd):nth-child(odd){
-    background-color: #f1eded;
+    background-color: var(--cor-nth);
 
 }
 footer{
-    background-color: #fff;
+    background-color: var(--fundo);
     text-align: center;
     padding: 40px;
 }
